@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useActionAPI } from "../../hooks/useActionAPI";
 import TextInput from "../input/TextInput";
+import TextAreaInput from "../input/TextAreaInput";
 
 const FormBookUpdate = ({ data }) => {
   const {
@@ -17,7 +18,7 @@ const FormBookUpdate = ({ data }) => {
     handleAPI({
       url: `${import.meta.env.VITE_API_URL}/book/${data.id}`,
       data: { description: value.description },
-      method: "PUT",
+      method: "PATCH",
     });
   };
   useEffect(() => {
@@ -31,6 +32,7 @@ const FormBookUpdate = ({ data }) => {
       }
     }
   }, [data]);
+
   return (
     <div className="border border-gray-200 p-4 rounded-md mt-5">
       <form onSubmit={handleSubmit(handleInsertBook)}>
@@ -48,8 +50,7 @@ const FormBookUpdate = ({ data }) => {
           name="author"
           readOnly
         />
-        <TextInput
-          type="text"
+        <TextAreaInput
           label={"Deskripsi"}
           {...register("description", { required: true })}
           name="description"

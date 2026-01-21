@@ -2,14 +2,14 @@ import React from "react";
 import FormBookCreate from "../component/form/FormBookCreate";
 import BreadCrumb from "../component/common/BreadCrumb";
 import FormBookUpdate from "../component/form/FormBookUpdate";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 import Loading from "../component/common/Loading";
 
 const FormBookPage = () => {
   const path = useParams();
   const { data, loading } = useFetch(
-    `${import.meta.env.VITE_API_URL}/book/${path.id}`,
+    path.id ? `${import.meta.env.VITE_API_URL}/book/${path.id}` : null,
   );
 
   return (

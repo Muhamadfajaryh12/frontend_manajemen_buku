@@ -22,7 +22,6 @@ const BookCard = ({ data, onDelete }) => {
     <div className="p-4 rounded-sm border border-gray-200 w-full">
       <h1 className="font-semibold m-0">{data.book_name}</h1>
       <p className="text-sm m-0">
-        {" "}
         {data.author} |{" "}
         {new Date(data.published_date).toLocaleDateString("id-ID", {
           day: "numeric",
