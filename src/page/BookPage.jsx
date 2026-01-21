@@ -11,6 +11,7 @@ const BookPage = () => {
   const [limit, setLimit] = useState(4);
   const handleSearch = (value) => {
     setKeyword(value);
+    setPage(1);
   };
   const { data, loading, removeData } = useFetch(
     `${import.meta.env.VITE_API_URL}/book?search=${keyword}&page=${page}&limit=${limit}`,
