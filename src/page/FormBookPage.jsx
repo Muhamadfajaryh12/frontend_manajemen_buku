@@ -23,7 +23,7 @@ const FormBookPage = () => {
         )
       ) : (
         <FormBookCreate />
-      )}{" "}
+      )}
     </div>
   );
 };

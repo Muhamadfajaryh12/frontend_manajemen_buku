@@ -2,6 +2,7 @@ import React from "react";
 import TextInput from "../input/TextInput";
 import { useForm } from "react-hook-form";
 import { useActionAPI } from "../../hooks/useActionAPI";
+import TextAreaInput from "../input/TextAreaInput";
 
 const FormBookCreate = () => {
   const {
@@ -40,8 +41,7 @@ const FormBookCreate = () => {
           required={true}
           error={errors.author}
         />
-        <TextInput
-          type="text"
+        <TextAreaInput
           label={"Deskripsi"}
           {...register("description", { required: true })}
           name="description"

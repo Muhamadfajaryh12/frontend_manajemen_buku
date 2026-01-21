@@ -8,7 +8,6 @@ const Search = ({ onSearch }) => {
       onSubmit={(e) => {
         e.preventDefault();
         onSearch(keyword);
-        console.log(keyword);
       }}
       className="w-full p-2 rounded-sm border border-gray-200 flex gap-2 items-center"
     >

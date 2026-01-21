@@ -47,7 +47,7 @@ const BookPage = () => {
       </div>
       {loading ? (
         <Loading />
-      ) : data?.data.length > 0 ? (
+      ) : data?.data?.length > 0 ? (
         <>
           <div className="grid grid-cols-2 gap-2 mt-10">
             {data?.data?.map((item) => (

@@ -6,7 +6,7 @@ const BreadCrumb = ({ title }) => {
       {title.map((item, index) => (
         <>
           <p>{item}</p>
-          {title.length - 1 > index ? <span>/</span> : ""}
+          {title?.length - 1 > index ? <span>/</span> : ""}
         </>
       ))}
     </div>
